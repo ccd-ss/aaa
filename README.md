@@ -45,13 +45,13 @@ python compute_iou.py ../Cityscapes/gtFine/val result/cityscapes
 * Download the initial pre-trained VGG model [Initial VGG model](https://drive.google.com/open?id=15jYhUjWFxAyMy4XVBDxhwvlRN5xZFdD1) and put it in the `model` folder
 
 ```
-python train.py --model VGG --snapshot-dir ./snapshots/GTA2Cityscapes
+python train.py --model VGG --snapshot-dir ./snapshots/GTA2Cityscapes --lambda-adv-target 0.001 --lambda-s 0.5
 
 ```
 * Or,download the initial pre-trained ResNet model [Initial ResNet model](https://drive.google.com/open?id=1yYNtx_fKeJaSqk1vk0IFAkLVw6rILKZF) and put it in the `model` folder
 
 ```
-python train.py --model ResNet --snapshot-dir ./snapshots/GTA2Cityscapes
+python train.py --model ResNet --snapshot-dir ./snapshots/GTA2Cityscapes --lambda-adv-target 0.001 --lambda-s 0.5
 
 ```
 * Tip: The best-performance model might not be the final one in the last epoch. If you want to evaluate every saved models in bulk, please use bulk_evaluate.py and bulk_iou.py, the result will be saved in an Excel sheet.
